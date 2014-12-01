@@ -31,7 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,9 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Configuration\CManager.cs" />
+    <Compile Include="Configuration\Elements\PerformanceCounter.cs" />
+    <Compile Include="Configuration\Elements\Server.cs" />
+    <Compile Include="Configuration\Elements\View.cs" />
+    <Compile Include="Configuration\PCWebViewerSettings.cs" />
+    <Compile Include="PCounter.cs" />
+    <Compile Include="PerformanceCounterGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DTO\PCResult.cs" />
+    <Compile Include="Services\DTO\ServerResult.cs" />
+    <Compile Include="Services\IPCounterService.cs" />
+    <Compile Include="Services\PCounterService.cs" />
+    <Compile Include="Utils\GenericConfigurationElementCollection.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
