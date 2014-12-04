@@ -3,66 +3,59 @@
 }
 
 @model Web.Models.DashboardModel
-@*@using Vmk.Framework.Configuration.Elements;*@
 
-@{
-    <table>
-        <tr>
-            <td>
-                <span id="spanTimeServer" />
-            </td>
-        </tr>
-        @foreach (var item in Model.Servers)
-        {
-            <tr>
-                <td>
-                    <h4>@item.Name</h4>
-                    <div id="@(item.Name)_ph" style="height: @(item.View.Height)px; width:500px">
-                    </div>
-                </td>
-                <td valign="top">
-                    <table id="@(item.Name)_tc">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Counter
-                                </th>
-                                <th>
-                                    Scale
-                                </th>
-                                <th>
-                                    Average
-                                </th>
-                                <th>
-                                    Min
-                                </th>
-                                <th>
-                                    Current
-                                </th>
-                                <th>
-                                    Max
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <p id="@(item.Name)_error">
-                    </p>
-                </td>
-            </tr>
-        }
-        <tr>
-            <td colspan="2">
-                <span style="color: Red" id="spanMessage"></span>&nbsp;
-            </td>
-        </tr>
-    </table>
+<div class="row">
+    <div class="small-12 columns">
+        <span id="spanTimeServer" />
+    </div>
+</div>
+@foreach (var item in Model.Servers)
+{
+    <div class="row">
+        <div class="small-6 columns">
+            <h4>@item.Name</h4>
+            <div id="@(item.Name)_ph" style="height: @(item.View.Height)px; width:500px">
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <table id="@(item.Name)_tc">
+                <thead>
+                    <tr>
+                        <th>
+                            Counter
+                        </th>
+                        <th>
+                            Scale
+                        </th>
+                        <th>
+                            Average
+                        </th>
+                        <th>
+                            Min
+                        </th>
+                        <th>
+                            Current
+                        </th>
+                        <th>
+                            Max
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p id="@(item.Name)_error">
+            </p>
+        </div>
+    </div>
 }
+<div class="row">
+    <div class="small-12 columns">
+        <span style="color: Red" id="spanMessage"></span>&nbsp;
+    </div>
+</div>
+
 @section scripts {
     <script src="~/Scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    @*<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
-        <script src="/services/PCounterService.svc/ajax/js" type="text/javascript"></script>*@
-
     <script type="text/javascript">
         $(function () {
             var data = [], totalPoints = 100

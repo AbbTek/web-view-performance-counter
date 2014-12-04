@@ -4,25 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/foundation/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div id="body">
-        @RenderSection("featured", required: false)
-        <section class="content-wrapper main-content clear-fix">
+    <div>
             @RenderBody()
-        </section>
     </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - Web Monitor Web</p>
-            </div>
-        </div>
-    </footer>
-
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/foundation")
     @RenderSection("scripts", required: false)
+    <script>
+    $(document).foundation();
+    </script>
 </body>
 </html>
