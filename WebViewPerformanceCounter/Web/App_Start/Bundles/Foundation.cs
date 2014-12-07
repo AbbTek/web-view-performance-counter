@@ -19,7 +19,9 @@ namespace Web
                       "~/Scripts/jquery.cookie.js",
                       "~/Scripts/foundation/foundation.js",
                       "~/Scripts/foundation/foundation.*",
-                      "~/Scripts/foundation/app.js");
+                      "~/Scripts/flot/jquery.flot.js",
+                      "~/Scripts/moment.js",
+                      "~/Scripts/app.js");
         }
     }
 }
