@@ -49,12 +49,11 @@ namespace WebViewPerformanceCounter.Core
 
         public List<ServerResult> GetResults()
         {
-
             List<ServerResult> servers = new List<ServerResult>();
 
             foreach (var item in counters)
             {
-                if (servers.Where(s => s.MachineName == item.MachineName).Count() == 0)
+                if (servers.Where(s => s.Name == item.ServerName).Count() == 0)
                 {
                     servers.Add(new ServerResult()
                     {
@@ -65,7 +64,7 @@ namespace WebViewPerformanceCounter.Core
                         TimeServer = DateTime.Now
                     });
                 }
-                var server = servers.Where(s => s.MachineName == item.MachineName).Single();
+                var server = servers.Where(s => s.Name == item.ServerName).Single();
 
                 if (item.PC != null)
                 {

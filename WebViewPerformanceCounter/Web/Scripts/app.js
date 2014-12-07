@@ -16,7 +16,7 @@
             $.each(result, function (index, val) {
                 if (data.length != result.length) {
                     data.push({
-                        serverName: val.MachineName,
+                        serverName: val.Name,
                         data: [],
                         errorLabel: $("#" + val.Name + "_error"),
                         plot: $("#" + val.Name + "_ph"),
