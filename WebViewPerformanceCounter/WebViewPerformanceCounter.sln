@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{E4CFDB
 	ProjectSection(SolutionItems) = preProject
 		Documents\Images\sample1.png = Documents\Images\sample1.png
 		Documents\Images\sample2.png = Documents\Images\sample2.png
+		Documents\Images\sql1.png = Documents\Images\sql1.png
 	EndProjectSection
 EndProject
 Global
